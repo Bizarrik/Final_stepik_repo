@@ -13,3 +13,10 @@ class LoginPageLocators():
     REG_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
     REG_PASSWORD_CONFIRM = (By.CSS_SELECTOR, "#id_registration-password2")
     REG_BTN = (By.NAME, "registration_submit")
+
+class ProductPageLocators():
+    ADD_TO_BASKET = (By.CLASS_NAME, "btn.btn-lg.btn-primary.btn-add-to-basket")
+    SUCCESS_MESSAGE = (By.CLASS_NAME, "alert.alert-success")
+    ITEM_NAME = (By.TAG_NAME, "h1")
+    ITEM_PRICE = (By.CLASS_NAME, "price_color")
+    INFO_MESSAGE = (By.CLASS_NAME, "alert.alert-info")
