@@ -23,3 +23,10 @@ def test_guest_should_see_login_elements(browser):
     page.should_be_login_url()
     page.should_be_login_form()
     page.should_be_register_form()
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "https://selenium1py.pythonanywhere.com/en-gb/"
+    page = MainPage(browser, link)
+    page.open()
+    page.should_open_basket_page()
+    page.should_be_empty_basket_message()
