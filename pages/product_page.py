@@ -31,3 +31,11 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.INFO_MESSAGE), "There is no info message"
         item_price = self.browser.find_element(*ProductPageLocators.ITEM_PRICE).text
         assert item_price in self.browser.find_element(*ProductPageLocators.INFO_MESSAGE).text, "The item price in info message differs from item price"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_disapear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is not disappeared, but it should"
