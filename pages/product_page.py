@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from .locators import BasketPageLocators
 
 class ProductPage(BasePage):
     def should_add_item_to_basket(self):
@@ -39,3 +40,11 @@ class ProductPage(BasePage):
     def should_disapear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is not disappeared, but it should"
+
+    def should_be_empty_basket(self):
+        assert self.is_not_element_present(*BasketPageLocators.BASKET_ITEMS)
+
+    def should_be_empty_basket_message(self):
+        basket_message = self.browser.find_element(*BasketPageLocators.EMPTY_BASKET_MESSAGE)
+        assert "Your basket is empty. Continue shopping" in basket_message.text, "Basket is not empty"
+

@@ -6,7 +6,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
-from.locators import MainPageLocators
+from .locators import MainPageLocators
+from .locators import BasketPageLocators
 import math
 
 class BasePage():
@@ -71,6 +72,6 @@ class BasePage():
         basket_button = self.browser.find_element(*MainPageLocators.BASKET_BUTTON)
         basket_button.click()
 
-    def should_be_empty_basket_message(self):
-        basket_message = self.browser.find_element(*MainPageLocators.EMPTY_BASKET_MESSAGE)
-        assert "Your basket is empty. Continue shopping" in basket_message.text, "Basket is not empty"
+    # def should_be_empty_basket_message(self):
+    #     basket_message = self.browser.find_element(*MainPageLocators.EMPTY_BASKET_MESSAGE)
+    #     assert "Your basket is empty. Continue shopping" in basket_message.text, "Basket is not empty"

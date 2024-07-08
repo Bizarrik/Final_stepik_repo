@@ -7,7 +7,6 @@ class BasePageLocators():
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_BUTTON = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
-    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner")
 
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -28,3 +27,7 @@ class ProductPageLocators():
     ITEM_PRICE = (By.CSS_SELECTOR, "p.price_color")
     # ITEM_PRICE_IN_INFO = (By.CSS_SELECTOR, "p:nth-child(1) > strong")
     INFO_MESSAGE = (By.CLASS_NAME, "alert.alert-info")
+
+class BasketPageLocators():
+    BASKET_ITEMS = (By.CLASS_NAME, "basket-items")
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner")
