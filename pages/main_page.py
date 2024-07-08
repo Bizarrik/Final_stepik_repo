@@ -8,10 +8,6 @@ class MainPage(BasePage):
     def __init__(self, *args, **kwargs):
         super(MainPage, self).__init__(*args, **kwargs)
 
-    # def should_open_basket_page(self):
-    #     basket_button = self.browser.find_element(*MainPageLocators.BASKET_BUTTON)
-    #     basket_button.click() перенесено в BasePage
-
     def should_be_empty_basket(self):
         assert self.is_not_element_present(*BasketPageLocators.BASKET_ITEMS)
 
