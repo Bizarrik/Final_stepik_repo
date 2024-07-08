@@ -6,7 +6,7 @@ class ProductPage(BasePage):
     def should_add_item_to_basket(self):
         self.should_be_add_to_basket_button()
         self.should_click_button_and_add_item_to_basket()
-        self.should_solve_quiz()
+        # self.should_solve_quiz()
         self.should_be_success_message_with_item_name()
         self.should_be_info_message_with_item_price()
 
@@ -37,7 +37,7 @@ class ProductPage(BasePage):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
 
-    def should_disapear_success_message(self):
+    def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is not disappeared, but it should"
 
